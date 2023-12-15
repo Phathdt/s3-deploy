@@ -33,6 +33,11 @@ let deploy = function (params) {
     const cacheFlag = cache ? `--cache ${cache}` : '';
     const filesRegex = filesToInclude ? filesToInclude : '**';
 
+    console.log(">>>>>>>>>>>>>>>>>>>>>>")
+    console.log("cacheControl", cacheControl)
+    console.log("cacheControlArg", cacheControlArg)
+    console.log(">>>>>>>>>>>>>>>>>>>>>>")
+
     try {
       const command = `npx s3-deploy@1.4.0 ./${filesRegex} \
                         --bucket ${bucket} \
