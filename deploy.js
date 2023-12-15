@@ -1,5 +1,6 @@
 const path = require('path');
 const exec = require('@actions/exec');
+const core = require('@actions/core');
 
 let deploy = function (params) {
   return new Promise((resolve, reject) => {
@@ -33,10 +34,10 @@ let deploy = function (params) {
     const cacheFlag = cache ? `--cache ${cache}` : '';
     const filesRegex = filesToInclude ? filesToInclude : '**';
 
-    console.debug(">>>>>>>>>>>>>>>>>>>>>>")
-    console.debug("cacheControl", cacheControl)
-    console.debug("cacheControlArg", cacheControlArg)
-    console.debug(">>>>>>>>>>>>>>>>>>>>>>")
+    core.debug(">>>>>>>>>>>>>>>>>>>>>>")
+    core.debug("cacheControl", cacheControl)
+    core.debug("cacheControlArg", cacheControlArg)
+    core.debug(">>>>>>>>>>>>>>>>>>>>>>")
 
     try {
       const command = `npx s3-deploy@1.4.0 ./${filesRegex} \

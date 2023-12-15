@@ -21,9 +21,9 @@ async function run() {
     const cache   = core.getInput('cache') || null;
     const filesToInclude = core.getInput('files-to-include') || null;
 
-    console.debug(">>>>>>>>>>>>>>>>>>>>>>")
-    console.debug("cacheControl", cacheControl)
-    console.debug(">>>>>>>>>>>>>>>>>>>>>>")
+    core.debug(">>>>>>>>>>>>>>>>>>>>>>")
+    core.debug("cacheControl", cacheControl)
+    core.debug(">>>>>>>>>>>>>>>>>>>>>>")
 
     await deploy({
       folder,
